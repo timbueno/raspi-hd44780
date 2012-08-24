@@ -36,7 +36,7 @@ if __name__ == '__main__':
     ip = get_ip()
     ip = ip[0].rstrip()
 
-    tList = [('Only Page', 'No Blinking')]
+    tList = [(ip, 'No Blinking')]
     #tList = [('First Line','Second Line'),('Third Line','Fourth Line'),('Fifth Line', 'Sixth Line')]
 
     blinkMessage(tList, 2, lcd)
