@@ -15,14 +15,19 @@ def get_ip():
 def blinkMessage(tList, delay, lcd):
     # tList is a list containing tuples
     # consisting of both lines on the display
-    while True:
-        for screen in tList:
-            for line in screen:
-                lcd.message(line)
-                if line[1] != line:
-                    lcd.cmd(0xC0)
-            sleep(delay)
-            lcd.clear()
+    if tList != 1:
+        while True:
+            for screen in tList:
+                for line in screen:
+                    lcd.message(line)
+                    if line[1] != line:
+                        lcd.cmd(0xC0)
+                sleep(delay)
+                lcd.clear()
+    else:
+        lcd.message(tList[0][0])
+        lcd.cmd(0xC0)
+        lcd.message(tList[0][1])
 
 if __name__ == '__main__':
 
