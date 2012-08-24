@@ -64,6 +64,7 @@ class HD44780:
         self.cmd(0x0C) # Turn on Display
         self.cmd(0x06) # Set cursor move direction right
         self.cmd(0x01) # Clear and home display
+        sleep(0.002)
 
     #
     # 4-Bit Write Sequence
