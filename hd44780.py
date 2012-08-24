@@ -50,6 +50,7 @@ class HD44780:
 
         # Initialize the LCD
         self.clear()
+        sleep(0.002)
 
     #
     # Initialize and clear lcd
@@ -70,7 +71,7 @@ class HD44780:
     def cmd(self, bits, char_mode=False):
         """ Send command to LCD """
 
-        sleep(0.002)
+        sleep(0.001)
         bits=bin(bits)[2:].zfill(8)
 
         # Set rs pin: command mode (0) or data mode (1)
