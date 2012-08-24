@@ -12,7 +12,7 @@ def get_ip():
     output = p.communicate(0)
     return output
 
-def blinkMessage(tList, lcd):
+def blinkMessage(tList, delay, lcd):
     # tList is a list containing tuples
     # consisting of both lines on the display
     while True:
@@ -21,8 +21,7 @@ def blinkMessage(tList, lcd):
                 lcd.message(line)
                 if line[1] != line:
                     lcd.cmd(0xC0)
-            sleep(2)
-            #lcd.cmd(0x01)
+            sleep(delay)
             lcd.clear()
 
 if __name__ == '__main__':
@@ -32,9 +31,10 @@ if __name__ == '__main__':
     ip = get_ip()
     ip = ip[0].rstrip()
 
-    tList = [('First Line','Second Line'),('Third Line','Fourth Line'),('Fifth Line', 'Sixth Line')]
+    tList = [('Only Page', 'No Blinking')]
+    #tList = [('First Line','Second Line'),('Third Line','Fourth Line'),('Fifth Line', 'Sixth Line')]
 
-    blinkMessage(tList, lcd)
+    blinkMessage(tList, 2, lcd)
 
     # message = 'IP:%s' % ip
     # lcd.message(message)
