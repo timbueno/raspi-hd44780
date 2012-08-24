@@ -21,5 +21,5 @@ if __name__ == '__main__':
 
     message = 'IP:%s' % ip
     lcd.message(message)
-    message = '\nSSH is Ready...'
-    lcd.message(message)
+    #message = '\nSSH is Ready...'
+    #lcd.message(message)
