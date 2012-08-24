@@ -10,3 +10,11 @@ def get_ip():
 	p = Popen(cmd, shell=True, stdout=PIPE)
 	output = p.communicate(0)
 	return output
+
+if __name__ == '__main__':
+
+    lcd = hd44780.HD44780()
+
+    ip = get_ip()
+
+    lcd.message(ip[0])
