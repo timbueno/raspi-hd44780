@@ -16,5 +16,8 @@ if __name__ == '__main__':
     lcd = hd44780.HD44780()
 
     ip = get_ip()
+    ip = ip[0].rstrip()
 
-    lcd.message(ip[0])
+
+    message = 'IP:%s' % ip
+    lcd.message(message)
