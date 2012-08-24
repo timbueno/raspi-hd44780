@@ -21,8 +21,9 @@ def blinkMessage(tList, lcd):
                 lcd.message(line)
                 if line[1] != line:
                     lcd.cmd(0xC0)
-            sleep(5)
-            lcd.cmd(0x01)
+            sleep(2)
+            #lcd.cmd(0x01)
+            lcd.clear()
 
 if __name__ == '__main__':
 
