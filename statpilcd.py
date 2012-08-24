@@ -15,7 +15,7 @@ def get_ip():
 def blinkMessage(tList, delay, lcd):
     # tList is a list containing tuples
     # consisting of both lines on the display
-    if tList != 1:
+    if len(tList) != 1:
         while True:
             for screen in tList:
                 for line in screen:
