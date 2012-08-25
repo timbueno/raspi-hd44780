@@ -46,8 +46,8 @@ if __name__ == '__main__':
 
     lcd = simplelcd()
 
-    ip = get_ip()
-    ip = ip[0].rstrip()
+    #ip = get_ip()
+    #ip = ip[0].rstrip()
 
     tList = [(ip, 'No Blinking')]
     #tList = [('First Line','Second Line'),('Third Line','Fourth Line'),('Fifth Line', 'Sixth Line')]
