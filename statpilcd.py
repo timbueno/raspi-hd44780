@@ -25,6 +25,7 @@ class Simplelcd(HD44780):
         # Send to screen
         ip = 'IP:%s' % ip
         sTuple = (ip, 'It worked!')
+        self.screen(sTuple)
 
 
     def blinkMessage(self, tList, delay):
