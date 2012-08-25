@@ -33,7 +33,7 @@ from time import sleep
 #
 # 4 Bit Mode 
 #
-class HD44780:
+class HD44780(object):
 
     def __init__(self, pin_rs=24, pin_e=23, pins_db=[4, 17, 21, 22]):
 

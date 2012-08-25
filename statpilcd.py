@@ -1,15 +1,15 @@
 #!/usr/bin/python
 
-import hd44780
+from hd44780 import HD44780
 
 from subprocess import *
 #from time import sleep
 
 
-class simplelcd(hd44780.HD44780):
+class Simplelcd(HD44780):
 
     def __init__(self):
-        super(simplelcd, self).__init__()
+        super(Simplelcd, self).__init__()
 
     def get_ip(self):
         cmd = "ip addr show wlan0 | grep inet | awk '{print $2}' | cut -d/ -f1"
@@ -44,7 +44,7 @@ class simplelcd(hd44780.HD44780):
 
 if __name__ == '__main__':
 
-    lcd = simplelcd()
+    lcd = Simplelcd()
 
     #ip = get_ip()
     #ip = ip[0].rstrip()
