@@ -25,6 +25,9 @@
 #        http://joshuagalloway.com/lcd.html
 #        http://en.wikipedia.org/wiki/Hitachi_HD44780_LCD_controller
 #        http://letsmakerobots.com/node/4240
+#
+# TODO: Not sure if subclassing screenfunctions class is
+#       the right design decision.
 
 
 import RPi.GPIO as GPIO

@@ -1,4 +1,5 @@
 from subprocess import *
+from datetime import datetime
 
 
 class SysStatScreen(object):
@@ -17,5 +18,5 @@ class SysStatScreen(object):
         ip = self.get_ip()
         # Send to screen
         ip = 'IP:%s' % ip
-        sTuple = (ip, 'It worked!')
+        sTuple = (ip, 'SSH is now ready...')
         return sTuple

@@ -51,8 +51,8 @@ if __name__ == '__main__':
 
     lcd = Simplelcd()
 
-    tList = [('Cool', 'No Blinking'),('just', 'kidding')]
-    #tList = [('First Line','Second Line'),('Third Line','Fourth Line'),('Fifth Line', 'Sixth Line')]
+    lcd.acceptor(lambda: lcd.displayIP())
 
-    lcd.blinkMessage(tList, 2)
-    
+    #tList = [('Cool', 'No Blinking'),('just', 'kidding')]
+    #tList = [('First Line','Second Line'),('Third Line','Fourth Line'),('Fifth Line', 'Sixth Line')]
+    #lcd.blinkMessage(tList, 2)
