@@ -18,5 +18,5 @@ class SysStatScreen(object):
         ip = self.get_ip()
         # Send to screen
         ip = 'IP:%s' % ip
-        sTuple = (ip, 'SSH is now ready...')
+        sTuple = (ip, 'SSH ready...')
         return sTuple
