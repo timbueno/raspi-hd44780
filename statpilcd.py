@@ -3,7 +3,7 @@
 from hd44780 import HD44780
 
 from subprocess import *
-#from time import sleep
+from time import sleep
 
 
 class Simplelcd(HD44780):
@@ -50,7 +50,7 @@ if __name__ == '__main__':
     #ip = get_ip()
     #ip = ip[0].rstrip()
 
-    tList = [('Cool', 'No Blinking')]
+    tList = [('Cool', 'No Blinking'),('just', 'kidding')]
     #tList = [('First Line','Second Line'),('Third Line','Fourth Line'),('Fifth Line', 'Sixth Line')]
 
     lcd.blinkMessage(tList, 2)
