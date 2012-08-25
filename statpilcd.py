@@ -11,6 +11,17 @@ class Simplelcd(HD44780):
     def __init__(self):
         super(Simplelcd, self).__init__()
 
+    def acceptor(self, func):
+        # Get screen tuple from input function
+        sTuple = func()
+        # TODO Check if tuple or list of tuples
+        # 
+        # Display screen output
+        self.screen(sTuple)
+
+    def poop(self):
+        return ('Poop','Dump')
+
     def get_ip(self):
         cmd = "ip addr show wlan0 | grep inet | awk '{print $2}' | cut -d/ -f1"
 
