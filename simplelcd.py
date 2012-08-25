@@ -24,6 +24,7 @@ class Simplelcd(HD44780):
         self.screen(sTuple)
 
     def get_ip(self):
+        
         cmd = "ip addr show wlan0 | grep inet | awk '{print $2}' | cut -d/ -f1"
 
         p = Popen(cmd, shell=True, stdout=PIPE)
@@ -37,7 +38,7 @@ class Simplelcd(HD44780):
         # Send to screen
         ip = 'IP:%s' % ip
         sTuple = (ip, 'It worked!')
-        self.screen(sTuple)
+        return sTuple
 
 
     def blinkMessage(self, tList, delay):
