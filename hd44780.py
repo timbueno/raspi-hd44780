@@ -54,7 +54,6 @@ class HD44780(SysStatScreen):
 
         # Initialize the LCD
         self.clear()
-        sleep(0.002)
 
     #
     # Initialize and clear lcd
