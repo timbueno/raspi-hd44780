@@ -16,6 +16,7 @@ class Simplelcd(HD44780):
 
         p = Popen(cmd, shell=True, stdout=PIPE)
         output = p.communicate(0)
+        output = output[0].rstrip()
         return output
 
     def displayIP(self):
