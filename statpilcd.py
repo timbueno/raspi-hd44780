@@ -28,6 +28,7 @@ class Simplelcd(HD44780):
     def blinkMessage(self, tList, delay):
         # tList is a list containing tuples
         # consisting of both lines on the display
+        self.clear()
         if len(tList) != 1:
             while True:
                 for screen in tList:
