@@ -3,35 +3,48 @@
 import hd44780
 
 from subprocess import *
-from time import sleep
+#from time import sleep
 
-def get_ip():
-    cmd = "ip addr show wlan0 | grep inet | awk '{print $2}' | cut -d/ -f1"
 
-    p = Popen(cmd, shell=True, stdout=PIPE)
-    output = p.communicate(0)
-    return output
+class simplelcd(hd44780.HD44780):
 
-def blinkMessage(tList, delay, lcd):
-    # tList is a list containing tuples
-    # consisting of both lines on the display
-    if len(tList) != 1:
-        while True:
-            for screen in tList:
-                for line in screen:
-                    lcd.message(line)
-                    if line[1] != line:
-                        lcd.cmd(0xC0)
-                sleep(delay)
-                lcd.clear()
-    else:
-        lcd.message(tList[0][0])
-        lcd.cmd(0xC0)
-        lcd.message(tList[0][1])
+    def __init__(self):
+        super(simplelcd, self).__init__()
+
+    def get_ip(self):
+        cmd = "ip addr show wlan0 | grep inet | awk '{print $2}' | cut -d/ -f1"
+
+        p = Popen(cmd, shell=True, stdout=PIPE)
+        output = p.communicate(0)
+        return output
+
+    def displayIP(self):
+        # Get IP
+        ip = self.get_ip()
+        #
+
+
+
+    def blinkMessage(self, tList, delay):
+        # tList is a list containing tuples
+        # consisting of both lines on the display
+        if len(tList) != 1:
+            while True:
+                for screen in tList:
+                    for line in screen:
+                        self.message(line)
+                        if line[1] != line:
+                            self.cmd(0xC0)
+                    sleep(delay)
+                    self.clear()
+        else:
+            self.message(tList[0][0])
+            self.cmd(0xC0)
+            self.message(tList[0][1])
 
 if __name__ == '__main__':
 
-    lcd = hd44780.HD44780()
+    lcd = simplelcd()
 
     ip = get_ip()
     ip = ip[0].rstrip()
@@ -39,7 +52,7 @@ if __name__ == '__main__':
     tList = [(ip, 'No Blinking')]
     #tList = [('First Line','Second Line'),('Third Line','Fourth Line'),('Fifth Line', 'Sixth Line')]
 
-    blinkMessage(tList, 2, lcd)
+    lcd.blinkMessage(tList, 2)
 
     # message = 'IP:%s' % ip
     # lcd.message(message)
