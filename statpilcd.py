@@ -21,8 +21,9 @@ class Simplelcd(HD44780):
     def displayIP(self):
         # Get IP
         ip = self.get_ip()
-        #
-
+        # Send to screen
+        ip = 'IP:%s' % ip
+        sTuple = (ip, 'It worked!')
 
 
     def blinkMessage(self, tList, delay):
@@ -42,12 +43,16 @@ class Simplelcd(HD44780):
             self.cmd(0xC0)
             self.message(tList[0][1])
 
+    def screen(self, sTuple):
+        for char in sTuple[0]:
+            self.cmd(ord(char),True)
+        self.cmd(0xC0)
+        for char in sTuple[1]:
+            self.cmd(ord(char),True)
+
 if __name__ == '__main__':
 
     lcd = Simplelcd()
-
-    #ip = get_ip()
-    #ip = ip[0].rstrip()
 
     tList = [('Cool', 'No Blinking'),('just', 'kidding')]
     #tList = [('First Line','Second Line'),('Third Line','Fourth Line'),('Fifth Line', 'Sixth Line')]
