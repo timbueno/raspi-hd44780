@@ -55,9 +55,4 @@ if __name__ == '__main__':
     #tList = [('First Line','Second Line'),('Third Line','Fourth Line'),('Fifth Line', 'Sixth Line')]
 
     lcd.blinkMessage(tList, 2)
-
-    # message = 'IP:%s' % ip
-    # lcd.message(message)
-    # lcd.cmd(0xC0)
-    # message = 'SSH is Ready...'
-    # lcd.message(message)
+    
