@@ -29,11 +29,12 @@
 
 import RPi.GPIO as GPIO
 from time import sleep
+from screenfunctions import SysStatScreen
 
 #
 # 4 Bit Mode 
 #
-class HD44780(screenfunctions):
+class HD44780(SysStatScreen):
 
     def __init__(self, pin_rs=24, pin_e=23, pins_db=[4, 17, 21, 22]):
 
