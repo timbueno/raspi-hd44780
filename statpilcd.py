@@ -17,6 +17,7 @@ class Simplelcd(HD44780):
         # TODO Check if tuple or list of tuples
         # 
         # Display screen output
+        self.clear()
         self.screen(sTuple)
 
     def poop(self):
