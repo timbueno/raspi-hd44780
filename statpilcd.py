@@ -32,10 +32,9 @@ class Simplelcd(HD44780):
         if len(tList) != 1:
             while True:
                 for screen in tList:
-                    for line in screen:
-                        self.message(line)
-                        if line[1] != line:
-                            self.cmd(0xC0)
+                    self.message(screen[0])
+                    self.cmd(0xC0)
+                    self.message(screen[1])    
                     sleep(delay)
                     self.clear()
         else:
