@@ -41,10 +41,13 @@ class Simplelcd(HD44780):
             self.message(tList[0][1])
 
     def screen(self, sTuple):
-        for char in sTuple[0]:
-            self.cmd(ord(char),True)
+        self.clear()
+        self.lcdprint(sTuple[0])
         self.cmd(0xC0)
-        for char in sTuple[1]:
+        self.lcdprint(sTuple[1])
+
+    def lcdprint(self, string):
+        for char in string:
             self.cmd(ord(char),True)
 
 if __name__ == '__main__':
